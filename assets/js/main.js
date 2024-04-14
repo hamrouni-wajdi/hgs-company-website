@@ -1,5 +1,5 @@
 (function($) {
-"use strict";
+// "use strict";
 
 
 /**
@@ -186,7 +186,7 @@ $('.searchbar__close').on('click', function(e) {
 // if( $('.md-content').children('.fix-header').length == 0) {
 //             $('.md-content').prepend('<div class="fix-header" style="height:' + hHeader + 'px"></div>')
 //         }else {
-//             $('.fix-header').css('height', hHeader);
+//             $('.fix-header').css('height', "100px");
 //         }
 //     }
 // }).trigger('resize');
