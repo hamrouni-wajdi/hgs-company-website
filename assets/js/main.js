@@ -123,7 +123,7 @@ $('.swiper').each(function() {
 			spaceBetween: 30
 		},
 		options = $.extend(optDefault, optData);
-	wrapper.children().wrap('<div class="swiper-slide"></div>');
+	wrapper.children().wrap(`<div class="swiper-slide"></div>`);
 	var swiper = new Swiper(self, options);
 
 function thumbnails(selector) {
@@ -281,7 +281,11 @@ $('.gallery-wrap').each(function() {
     }
 })
 
-
+const $navbarDiv = $("#nav-script").html()
+$('.swiper-button-next-custom, .swiper-button-prev-custom ').on('click',function(){
+	// console.log($('.swiper-slide-active')[0].children[0].prepend($navbarDiv))
+	$('.swiper-slide-active')[0].children[0].prepend($.parseHTML(`<header class="header header-fixheight header--fixed" id="navbar-transparent"><div class="container c-transparent"><div class="header__inner header__inner-transparent"><div class="header-logo"><a href="home.html"><img class="logo" src="assets/img/logo/LOGO_HD.png" alt=""></a></div><nav class="raising-nav"><ul class="raising-menu raising-menu-transparent"><li class="current"><a href="#id1">Home</a></li><li><a href="#id2">Projets</a></li><li><a href="#id3">Laboratoires</a></li><li><a href="#id4">Equipements</a></li><li><a href="#id5">Témoignages</a></li><li><a href="#id6">Equipe</a></li><li><a href="#id7">Contactez Nous</a></li></ul><div class="navbar-toggle"><i class="fa fa-bars"></i></div></nav><div class="btn-right"><div class="search-btn"><i class="fa fa-search"></i></div></div><div class="searchbar"><div class="searchbar__group"><span class="searchbar__addon"><i class="fa fa-search"></i></span><input class="searchbar__input" type="text" name="search" value="" placeholder="Search"><span class="searchbar__close"></span></div></div></div></div></header>`)[0])
+})
 
 })(jQuery);
 
